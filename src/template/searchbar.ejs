@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Buscar noticias</title>
+    <link rel="stylesheet" href="/css/app.css" />
+  </head>
+  <body>
+    <h1>🔍 Buscar noticias</h1>
+    <form action="/searchbar/results" method="GET">
+      <input
+        type="text"
+        name="search"
+        placeholder="Escribe el título..."
+        value="<%= search %>"
+        required
+        autocomplete="off"
+      />
+      <button type="submit">Buscar</button>
+    </form>
+  </body>
+</html>
