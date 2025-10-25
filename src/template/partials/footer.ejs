@@ -1,0 +1,76 @@
+<footer>
+  © <%= new Date().getFullYear() %> Noticias Noticiosas
+</footer>
+
+<script>
+  // Código seguro para toggle del sidebar y ajustar offset del contenido según la altura del header
+  (function(){
+    function onReady(fn){
+      if(document.readyState !== 'loading') fn(); else document.addEventListener('DOMContentLoaded', fn);
+    }
+
+    onReady(function(){
+      const btn = document.getElementById('btn-toggle-sidebar');
+      const sidebar = document.getElementById('sidebarMenu');
+      const overlay = document.getElementById('overlay');
+
+      const toggleSidebar = () => {
+        if(sidebar) sidebar.classList.toggle('show');
+        if(overlay) overlay.classList.toggle('show');
+      };
+
+      if(btn) btn.addEventListener('click', toggleSidebar);
+      if(overlay) overlay.addEventListener('click', toggleSidebar);
+
+        // Modo oscuro: persistencia y toggle
+        const btnDark = document.getElementById('btn-dark-mode');
+        const darkStateLabel = document.getElementById('dark-state');
+
+        function applyDarkMode(enabled){
+          if(enabled){
+            document.body.classList.add('dark-mode');
+            if(btnDark) btnDark.setAttribute('aria-pressed','true');
+            if(darkStateLabel) darkStateLabel.textContent = 'On';
+          } else {
+            document.body.classList.remove('dark-mode');
+            if(btnDark) btnDark.setAttribute('aria-pressed','false');
+            if(darkStateLabel) darkStateLabel.textContent = 'Off';
+          }
+        }
+
+        // Leer preferencia guardada
+        try{
+          const saved = localStorage.getItem('darkMode');
+          const enabled = saved === '1';
+          applyDarkMode(enabled);
+        } catch(e){ /* localStorage puede fallar en entornos privados */ }
+
+        if(btnDark){
+          btnDark.addEventListener('click', function(){
+            const isDark = document.body.classList.toggle('dark-mode');
+            try{ localStorage.setItem('darkMode', isDark ? '1' : '0'); } catch(e){}
+            applyDarkMode(isDark);
+          });
+        }
+
+      // Ajuste dinámico del padding-top del contenido según la altura del header
+      const header = document.querySelector('header');
+      const main = document.querySelector('.main-content') || document.querySelector('main') || document.querySelector('article') || document.querySelector('.form-container');
+      const sidebarEl = document.getElementById('sidebarMenu');
+
+      function adjustOffsets(){
+        if(header && main){
+          const h = header.offsetHeight;
+          // sumar 16px de separación visual
+          main.style.paddingTop = (h + 16) + 'px';
+        }
+        if(header && sidebarEl){
+          sidebarEl.style.paddingTop = header.offsetHeight + 'px';
+        }
+      }
+
+      adjustOffsets();
+      window.addEventListener('resize', adjustOffsets);
+    });
+  })();
+</script>

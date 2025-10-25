@@ -1,15 +1,66 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <title>Acerca de</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Acerca de - Noticias Noticiosas</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="/css/style.css">
 </head>
 <body>
-  <div class="container mt-5">
-    <h1>Acerca de</h1>
-    <p>Esta es una página de ejemplo para mostrar información de la aplicación de noticias.</p>
-    <a href="/news" class="btn btn-primary">Volver al tablón de noticias</a>
+
+  <%- include('partials/sidebar') %>
+  <%- include('partials/header', { headerTitle: 'Acerca de' }) %>
+
+  <div class="main-content">
+    <section class="about-hero" style="max-width:1100px; margin:0 auto 2rem; padding:2rem;">
+      <div class="d-flex align-items-center gap-3">
+        <div style="width:84px; height:84px; background:var(--color-accent); border-radius:12px; display:flex; align-items:center; justify-content:center; color:var(--color-panel); font-weight:700; font-size:1.2rem;">NN</div>
+        <div>
+          <h1 style="margin:0 0 .25rem;">Noticias Noticiosamente Noticiosas</h1>
+          <p class="text-muted" style="margin:0;">Periodismo ágil, claro y con contexto — entradas, reportes y opiniones.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="about-grid" style="max-width:1100px; margin:0 auto 3rem; display:grid; grid-template-columns:1fr 320px; gap:2rem;">
+      <main>
+        <article class="about-card" style="background:var(--color-panel); padding:1.5rem; border-radius:10px; box-shadow:0 8px 20px rgba(2,6,23,0.04);">
+          <h2>Quiénes somos</h2>
+          <p class="text-muted">Somos un equipo pequeño dedicado a publicar resúmenes y análisis de actualidad. Nos enfocamos en claridad, fuentes verificadas y una presentación ligera que facilite la lectura.</p>
+
+          <h3>Nuestra misión</h3>
+          <p>Entregar noticias con contexto, evitando el ruido. Queremos que quienes nos lean comprendan rápidamente el qué, el porqué y las fuentes relevantes.</p>
+
+          <h3>Valores</h3>
+          <ul>
+            <li>Veracidad y humildad</li>
+            <li>Claridad y concisión</li>
+            <li>Transparencia en la fuente</li>
+          </ul>
+
+          <h3>Contacto</h3>
+          <p class="text-muted">Escríbenos a <a href="mailto:contacto@noticias.local">contacto@noticias.local</a> para sugerencias o colaboraciones.</p>
+        </article>
+      </main>
+
+      <aside>
+        <div style="background:var(--color-panel); padding:1rem; border-radius:10px; box-shadow:0 6px 18px rgba(2,6,23,0.04);">
+          <h4>Equipo</h4>
+          <ul class="list-unstyled small text-muted">
+            <li><strong>Editor:</strong> Alex Pérez</li>
+            <li><strong>Redacción:</strong> María López</li>
+            <li><strong>Diseño:</strong> Equipo Interno</li>
+          </ul>
+          <hr>
+          <h5>Principios de publicación</h5>
+          <p class="small text-muted">Publicamos correcciones cuando es necesario. Todas las fuentes principales se citan en cada artículo.</p>
+        </div>
+      </aside>
+    </section>
   </div>
+
+  <%- include('partials/footer') %>
 </body>
 </html>
+
