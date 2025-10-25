@@ -18,9 +18,12 @@ import { News } from "../types/News";
     en producción debe sustituirse por una capa de datos (DB) con
     concurrencia, validaciones y manejo de errores más robusto.
 */
-const DB_PATH = path.resolve("database/news.json");
-
 export default class NewsModel {
+  private dbPath: string;
+
+  constructor(dbPath?: string) {
+    this.dbPath = dbPath ?? path.resolve("database/news.json");
+  }
   /*
     getAll
     - Lee el fichero JSON y devuelve el array de noticias.
@@ -28,8 +31,8 @@ export default class NewsModel {
     - Atrapa errores de parseo y devuelve [] en caso de datos corruptos.
   */
   getAll(): News[] {
-    if (!fs.existsSync(DB_PATH)) return [];
-    const data = fs.readFileSync(DB_PATH, "utf-8");
+    if (!fs.existsSync(this.dbPath)) return [];
+    const data = fs.readFileSync(this.dbPath, "utf-8");
     try {
       return JSON.parse(data || "[]");
     } catch {
@@ -69,7 +72,7 @@ export default class NewsModel {
     const created = { id, ...newNews };
     news.push(created);
 
-    fs.writeFileSync(DB_PATH, JSON.stringify(news, null, 2));
+    fs.writeFileSync(this.dbPath, JSON.stringify(news, null, 2));
     return created;
   }
 }
