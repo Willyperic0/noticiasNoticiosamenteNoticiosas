@@ -125,6 +125,13 @@ header button:focus { outline: 2px solid rgba(37,99,235,0.12); }
 
 @media (max-width: 768px) { #sidebarMenu { padding-top: calc(var(--header-height)); } }
 
+.news-card .card-body p,
+.blog-article .lead,
+.blog-article .article-body p {
+  white-space: pre-line;
+}
+
+
 /* ======== Search bar ======== */
 /* Simple form/search styles */
 #searchForm { margin-bottom: 1.25rem; }
@@ -187,4 +194,28 @@ article,
 .flex-grow-1 {
   width: 100%;
   transition: all 0.3s;
+}
+
+/* === Ajuste de altura visual uniforme en tarjetas === */
+.news-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 380px; /* altura fija visual */
+  max-height: 380px;
+  overflow: hidden;
+}
+
+/* Mantiene salto de línea sin deformar altura */
+.news-card .card-body p {
+  white-space: pre-line;
+  margin: 0;
+}
+
+/* Limita el texto del summary para no estirar la tarjeta */
+.news-card .card-body .card-text {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 3; /* máximo 3 líneas visibles */
+  -webkit-box-orient: vertical;
 }

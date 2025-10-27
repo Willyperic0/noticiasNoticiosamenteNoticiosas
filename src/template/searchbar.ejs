@@ -7,12 +7,12 @@
   </head>
   <body>
     <h1>🔍 Buscar noticias</h1>
-    <form action="/searchbar/results" method="GET">
+    <form action="/search" method="GET"> <!-- ✅ antes /searchbar/results -->
       <input
         type="text"
-        name="search"
+        name="term"                         <!-- ✅ antes name="search" -->
         placeholder="Escribe el título..."
-        value="<%= search %>"
+        value="<%= search || '' %>"
         required
         autocomplete="off"
       />

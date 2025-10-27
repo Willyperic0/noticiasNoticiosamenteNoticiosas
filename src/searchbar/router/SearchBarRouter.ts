@@ -31,20 +31,31 @@ export default class SearchBarRouter {
   }
 
   private routes(): void {
-    // Buscar por título
+    // Buscar por título con paginación
     this.router.get("/", (req: Request, res: Response): void => {
       const term = (req.query["term"] as string)?.toLowerCase() ?? "";
+      const page = parseInt(req.query["page"] as string) || 1;
+      const limit = 6; // cantidad de noticias por página
+
       const allNews = this.newsModel.getAll();
 
+      // Filtrado
       const filtered = term
         ? allNews.filter(n => n.title.toLowerCase().includes(term))
         : allNews;
 
-      // Reutiliza NewsView.list para mostrar resultado de búsqueda
-      this.newsView.list(res, filtered, {
+      // Paginación
+      const totalPages = Math.ceil(filtered.length / limit);
+      const start = (page - 1) * limit;
+      const paginatedNews = filtered.slice(start, start + limit);
+
+      this.newsView.list(res, paginatedNews, {
         title: term ? `Resultados para "${term}"` : "Noticias",
-        search: term
+        search: term,
+        page,
+        totalPages
       });
     });
   }
+
 }
