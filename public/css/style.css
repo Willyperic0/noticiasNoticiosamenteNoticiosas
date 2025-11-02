@@ -14,30 +14,35 @@
 
 /* ======== Variables de color ======== */
 :root {
-  /* Base (light) palette - harmonious neutrals with a teal accent */
-  --color-bg: #f7fafc;        /* very light */
-  --color-panel: #ffffff;     /* card / panel */
-  --color-accent: #2c7a7b;    /* teal accent */
-  --color-accent-2: #2563eb;  /* secondary blue for links/buttons */
-  --color-text: #0f1724;      /* nearly-black for best readability */
-  --color-muted: #6b7280;     /* subdued text */
-  --color-hover: #174b4b;     /* hover darker */
-  --header-height: 68px;      /* slightly smaller header */
+  /* Light mode — Gardevoir Essence */
+  --color-bg: #FBFBFC;         /* Lotion - base neutra, luminosa */
+  --color-panel: #F0F5EF;      /* tono inspirado en Chinese White, más limpio */
+  --color-accent: #79AD75;     /* Iguana Green - acento principal */
+  --color-accent-2: #D56671;   /* Fuzzy Wuzzy - acento rosado */
+  --color-hover: #BADBB2;      /* Light Moss Green - hover / resalte */
+  --color-text: #263229;       /* verde grisáceo oscuro - contraste natural */
+  --color-muted: #6E7D73;      /* texto secundario verdoso suave */
+  --border-color: rgba(0, 0, 0, 0.06);
+  --shadow-strong: rgba(0, 0, 0, 0.08);
+  --header-height: 68px;
 }
 
-/* Dark mode variables applied when body has .dark-mode */
+/* ======== Dark Mode (Gardevoir Shiny) ======== */
 body.dark-mode {
-  /* Dark base: deep indigo/blue with soft teal accents for readability */
-  --color-bg: #071021;        /* very dark navy */
-  --color-panel: #0e1622;     /* slightly lighter card background */
-  --color-accent: #6ee7b7;    /* gentle mint for highlights */
-  --color-accent-2: #60a5fa;  /* soft blue for links/buttons */
-  --color-text: #e6eef6;      /* near-white, slightly cool */
-  --color-muted: #9aa6ad;     /* muted text */
-  --color-hover: #4fb6a6;     /* hover tint for accents */
-  --border-color: rgba(255,255,255,0.04);
-  --shadow-strong: rgba(2,6,23,0.55);
+  /* Basado en tonos fríos tipo “shiny” — equilibrio entre azul y menta */
+  --color-bg: #18242B;         /* navy grisáceo oscuro */
+  --color-panel: #22323A;      /* un poco más claro para paneles */
+  --color-accent: #A0F8FF;     /* Skyee Bluee - acento brillante */
+  --color-accent-2: #F48C40;   /* coral suave - contraste */
+  --color-hover: #73C9D0;      /* hover menta */
+  --color-text: #E6F6F8;       /* texto claro */
+  --color-muted: #9FB7BA;      /* texto secundario gris-azulado */
+  --border-color: rgba(255,255,255,0.06);
+  --shadow-strong: rgba(0,0,0,0.55);
 }
+
+
+
 
 /* Dark-mode visual adjustments for elements that used hard-coded rgba values */
 body.dark-mode header {

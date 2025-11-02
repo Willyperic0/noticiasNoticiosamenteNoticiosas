@@ -92,7 +92,7 @@
     "title": "EQUIPO 1",
     "summary": "Estructuras de Datos",
     "content": "El equipo 1 presentó su proyecto de gestión de trenes de transporte de pasajeros en la jornada de socialización del 29 de octubre de 2025. La exposición describió las funciones principales del sistema, aunque la presentación se apoyó en la lectura de diapositivas.\n\nEl profesor Lenin consideró que no había elementos presentables y lamentó que los estudiantes leyeran todo el tiempo las diapositivas. El profesor Francisco señaló ausencia de marco conceptual y la inclusión de objetivos dentro del mismo, lo que restó claridad al trabajo.\n\nRedacción UPB Digital",
-    "image": "https://example.com/equipo1.jpg",
+    "image": "https://i.ibb.co/BHSMMtXs/image.png",
     "date": "2025-10-29"
   },
   {
@@ -100,7 +100,7 @@
     "title": "EQUIPO 2",
     "summary": "Estructuras de Datos",
     "content": "El equipo 2 presentó su sistema de gestión de trenes de pasajeros y, en términos generales, la muestra no fue deficiente. La exposición cubrió los aspectos centrales del proyecto.\n\nLa profesora Sandra criticó la falta de compromiso de algunos integrantes por llegadas tardías o ausencias. La profesora Danith señaló problemas en la actitud al exponer. El profesor Lenin cuestionó la elección de Java para una aplicación web y el profesor Francisco comentó deficiencias en la planificación del tiempo y en la distribución del trabajo.\n\nRedacción UPB Digital",
-    "image": "https://example.com/equipo2.jpg",
+    "image": "https://i.ibb.co/fY2qZTRY/image.png",
     "date": "2025-10-29"
   },
   {
@@ -108,7 +108,7 @@
     "title": "EQUIPO 3",
     "summary": "Estructuras de Datos",
     "content": "El equipo 3 realizó una exposición clara y de buena calidad sobre su proyecto de gestión de trenes. Se mostró el trabajo realizado y las funcionalidades principales.\n\nNo obstante, el grupo no presentó conclusiones, un detalle que la profesora Sandra indicó como relevante para completar la entrega. La profesora Claudia pidió mostrar con más detalle los grafos mencionados y el profesor Lenin elogió el trabajo técnico, advirtiendo mejoras en la presentación de diagramas grandes y en la explicación del uso de metodología Kanban.\n\nRedacción UPB Digital",
-    "image": "https://example.com/equipo3.jpg",
+    "image": "https://easimages.basnop.com/default-image_600.png",
     "date": "2025-10-29"
   },
   {
@@ -116,7 +116,7 @@
     "title": "EQUIPO 4",
     "summary": "Estructuras de Datos",
     "content": "El equipo 4 no se presentó a la jornada por motivos desconocidos, por lo que no hubo defensa ni demostración del proyecto.\n\nNo se registraron comentarios del jurado debido a la ausencia del equipo.\n\nRedacción UPB Digital",
-    "image": "https://example.com/equipo4.jpg",
+    "image": "https://i.ibb.co/HfykPDZB/image.png",
     "date": "2025-10-29"
   },
   {
@@ -124,7 +124,7 @@
     "title": "EQUIPO 5",
     "summary": "Estructuras de Datos",
     "content": "El equipo 5 presentó su proyecto durante la jornada, exponiendo las características básicas del sistema desarrollado para el curso de Estructuras de Datos.\n\nNo se registraron observaciones concretas en el archivo original, por lo que el jurado consideró la presentación dentro de lo esperado para la jornada.\n\nRedacción UPB Digital",
-    "image": "https://example.com/equipo5.jpg",
+    "image": "https://easimages.basnop.com/default-image_600.png",
     "date": "2025-10-29"
   },
   {
@@ -132,7 +132,7 @@
     "title": "VETERINARIA SOS",
     "summary": "Ingeniería de Software",
     "content": "El equipo presentó un sistema de agendamiento para una veterinaria como parte de la jornada académica. La exposición mostró las funciones de gestión de citas y manejo de clientes.\n\nEl profesor Briceño felicitó el trabajo realizado. La profesora Claudia valoró el uso de diapositivas como apoyo pero recordó que las conclusiones no deben aparecer íntegramente en las diapositivas. El profesor Lenin destacó detalles y recomendó mejorar algunos aspectos aplicables a otros proyectos.\n\nRedacción UPB Digital",
-    "image": "https://example.com/veterinaria-sos.jpg",
+    "image": "https://i.ibb.co/wh955Ny6/image.png",
     "date": "2025-10-29"
   },
   {
@@ -140,7 +140,7 @@
     "title": "URBAN SHOES",
     "summary": "Ingeniería de Software",
     "content": "El grupo Urban Shoes presentó su sistema de inventario de zapatos; la exposición fue aceptable y mostró mejoras tras correcciones previas.\n\nLa profesora Sandra elogió la mejora en la presentación tras aplicar las correcciones. La profesora Danith observó evidencias de uso de IA en la demo. El profesor Lenin felicitó el avance, aunque sugirió mejorar algunos diagramas y corregir errores conceptuales sobre MVC.\n\nRedacción UPB Digital",
-    "image": "https://example.com/urban-shoes.jpg",
+    "image": "https://i.ibb.co/vCsfhYb0/image.png",
     "date": "2025-10-29"
   },
   {
@@ -148,7 +148,7 @@
     "title": "RANA SHOES",
     "summary": "Ingeniería de Software",
     "content": "El grupo Rana Shoes presentó un sistema que automatiza la creación de zapatos. La propuesta incluía el flujo de producción y la gestión de piezas, aunque la presentación fue duramente criticada por el jurado.\n\nEl profesor Briceño señaló que el objetivo estaba demasiado extenso y que no se mencionó la API REST. El profesor Lenin comentó que muchos requisitos no eran específicos, aunque reconoció que los diagramas de flujo y secuencia estaban bien desarrollados.\n\nRedacción UPB Digital",
-    "image": "https://example.com/rana-shoes.jpg",
+    "image": "https://i.ibb.co/TBqFRg6z/image.png",
     "date": "2025-10-29"
   },
   {
@@ -156,7 +156,7 @@
     "title": "AVITECH",
     "summary": "Ingeniería de Software",
     "content": "El equipo Avitech presentó una aplicación para la gestión de una finca, que incluía módulos de monitoreo de activos y medición del tamaño de huevos en galpones. Sin embargo, la exposición no transmitió dominio del tema y fue cuestionada por los docentes.\n\nEl profesor Francisco señaló la ausencia de diagramas UML y casos de uso, y criticó la falta de fundamento técnico. Además, el público consideró poco profesional la actitud de uno de los integrantes durante la defensa.\n\nRedacción UPB Digital",
-    "image": "https://example.com/avitech.jpg",
+    "image": "https://i.ibb.co/pBgrNczw/image.png",
     "date": "2025-10-29"
   },
   {
@@ -164,7 +164,7 @@
     "title": "CENTRO DE DESARROLLO DE SOFTWARE",
     "summary": "Proyecto Integrador I",
     "content": "El centro presentó su proyecto como parte de la jornada del Proyecto Integrador I, describiendo objetivos y entregables previstos.\n\nNo hay observaciones detalladas en el archivo original, por lo que la presentación se registra como parte de la exposición general del día.\n\nRedacción UPB Digital",
-    "image": "https://example.com/centro-desarrollo.jpg",
+    "image": "https://i.ibb.co/LXSgzjHP/image.png",
     "date": "2025-10-29"
   },
   {
@@ -172,7 +172,7 @@
     "title": "CENTRO DE AGROINDUSTRIA INTELIGENTE",
     "summary": "Proyecto Integrador I",
     "content": "El Centro de Agroindustria Inteligente expuso su propuesta para optimizar procesos agrónomos mediante módulos de gestión de recursos. La presentación destacó el enfoque hacia el productor agrícola.\n\nEl profesor Briceño valoró el esfuerzo, aunque criticó que el despliegue estuviera en localhost y que no quedara claro el marco teórico sobre DNS, HTTP y VOIP. El profesor Ali reconoció el esfuerzo general del equipo.\n\nRedacción UPB Digital",
-    "image": "https://example.com/centro-agroindustria.jpg",
+    "image": "https://i.ibb.co/1WY0XYj/image.png",
     "date": "2025-10-29"
   },
   {
@@ -180,7 +180,7 @@
     "title": "CENTRO DE BIOTECNOLOGÍA",
     "summary": "Proyecto Integrador I",
     "content": "El Centro de Biotecnología presentó su proyecto durante la jornada académica, explicando sus objetivos y componentes principales.\n\nNo hay observaciones concretas incluidas en la fuente original; se registra la presentación como parte del proceso de socialización.\n\nRedacción UPB Digital",
-    "image": "https://example.com/centro-biotecnologia.jpg",
+    "image": "https://i.ibb.co/wDGVKyQ/image.png",
     "date": "2025-10-29"
   },
   {
@@ -188,7 +188,7 @@
     "title": "CENTRO DE ENERGÍAS RENOVABLES",
     "summary": "Proyecto Integrador I",
     "content": "El Centro de Energías Renovables expuso un sistema para la gestión de energías renovables. En la presentación se describieron objetivos y la integración con otros proyectos.\n\nEl profesor Briceño indicó que no se entendía dónde estaba la gestión de energías renovables y criticó la falta de coherencia con otros grupos. La profesora Danith notó faltas de ortografía en nombres y que el equipo debía revisar su backlog, que mostraba 1400 puntos.\n\nRedacción UPB Digital",
-    "image": "https://example.com/centro-energias.jpg",
+    "image": "https://i.ibb.co/yBKN7M03/image.png",
     "date": "2025-10-29"
   },
   {
@@ -196,7 +196,7 @@
     "title": "CENTRO DE ROBÓTICA Y AUTOMATIZACIÓN",
     "summary": "Proyecto Integrador I",
     "content": "El Centro de Robótica y Automatización presentó su propuesta en la jornada, detallando los módulos y la arquitectura general.\n\nNo se registraron observaciones detalladas en la fuente original; la exposición formó parte de la socialización general.\n\nRedacción UPB Digital",
-    "image": "https://example.com/centro-robotica.jpg",
+    "image": "https://i.ibb.co/wrJc4HPW/image.png",
     "date": "2025-10-29"
   },
   {
@@ -204,15 +204,15 @@
     "title": "CENTRO DE CIBERSEGURIDAD",
     "summary": "Proyecto Integrador I",
     "content": "El Centro de Ciberseguridad expuso su propuesta enfocada en políticas y buenas prácticas para proteger sistemas informáticos. La presentación abarcó objetivos y alcance del proyecto.\n\nNo se consignaron observaciones específicas en la fuente entregada; quedó registrada como parte de la jornada.\n\nRedacción UPB Digital",
-    "image": "https://example.com/centro-ciberseguridad.jpg",
+    "image": "https://i.ibb.co/wh2zSzNj/image.png",
     "date": "2025-10-29"
   },
   {
     "id": 27,
     "title": "CENTRO DE SOLUCIONES SMART CITIES",
     "summary": "Proyecto Integrador I",
-    "content": "El Centro de Soluciones Smart Cities presentó su iniciativa para integrar servicios urbanos mediante tecnología. La exposición abordó propuestas de implementación y posibles impactes en la ciudad.\n\nSegún el registro, la presentación formó parte de la jornada de socialización sin observaciones puntuales en el archivo original.\n\nRedacción UPB Digital",
-    "image": "https://example.com/centro-smartcities.jpg",
+    "content": "A Ferrucho no le dio el Ki para pasar a presentar.\n\nRedacción UPB Digital",
+    "image": "https://easimages.basnop.com/default-image_600.png",
     "date": "2025-10-29"
   },
   {
@@ -220,7 +220,7 @@
     "title": "ImgK",
     "summary": "Introducción a Ingeniería de Sistemas e Informática",
     "content": "El proyecto ImgK presentó una solución que identifica calorías en alimentos mediante análisis de imágenes e inteligencia artificial. La propuesta explicó el proceso de captura y clasificación de imágenes para estimar valores nutricionales.\n\nLa presentación detalló el flujo de procesamiento y las limitaciones actuales, con recomendaciones para seguir perfeccionando el modelo.\n\nRedacción UPB Digital",
-    "image": "https://example.com/imgk.jpg",
+    "image": "https://i.ibb.co/LDCKnFpS/image.png",
     "date": "2025-10-30"
   },
   {
@@ -228,7 +228,7 @@
     "title": "ECO UPB",
     "summary": "Introducción a Ingeniería de Sistemas e Informática",
     "content": "Eco UPB presentó un sistema de reciclaje automatizado que utiliza inteligencia artificial para clasificar residuos. La demostración mostró la lógica de clasificación y los puntos de integración con la universidad.\n\nEl equipo expuso limitaciones técnicas y posibles mejoras para su despliegue a gran escala.\n\nRedacción UPB Digital",
-    "image": "https://example.com/eco-upb.jpg",
+    "image": "https://i.ibb.co/r2vv5HFY/image.png",
     "date": "2025-10-30"
   },
   {
@@ -236,15 +236,15 @@
     "title": "UPB Study+",
     "summary": "Introducción a Ingeniería de Sistemas e Informática",
     "content": "Upb Study+ presentó una red social dirigida a estudiantes para compartir recursos académicos. La exposición incluyó el diseño de la plataforma y funcionalidades pensadas para facilitar el aprendizaje colaborativo.\n\nEl profesor Lenin destacó positivamente la inclusión de un marco legal en la propuesta. Otros docentes felicitaron el trabajo y resaltaron el valor del video de presentación como un plus.\n\nRedacción UPB Digital",
-    "image": "https://example.com/upb-studyplus.jpg",
+    "image": "https://i.ibb.co/2YszgH8G/image.png",
     "date": "2025-10-30"
   },
   {
     "id": 31,
     "title": "Pet Finder",
-    "summary": "Proyecto Integrador III",
+    "summary": "Introducción a Ingeniería de Sistemas e Informática",
     "content": "Pet Finder presentó una aplicación que utiliza inteligencia artificial para ayudar a identificar y localizar mascotas perdidas. El equipo mostró el algoritmo de coincidencia y la integración con mapas para la geolocalización.\n\nEl profesor Lenin valoró el objetivo, pero advirtió la distancia entre escribir un objetivo y completar el producto. La profesora Sandra animó a los estudiantes a vender su producto con más convicción. El profesor Omar comentó que algunos componentes fueron construidos mediante herramientas visuales, aunque el trabajo detrás fue relevante.\n\nRedacción UPB Digital",
-    "image": "https://example.com/pet-finder.jpg",
+    "image": "https://i.ibb.co/8gsy77JK/image.png",
     "date": "2025-10-30"
   },
   {
@@ -252,7 +252,7 @@
     "title": "UPB SEÑAS",
     "summary": "Introducción a Ingeniería de Sistemas e Informática",
     "content": "El proyecto UPB Señas presentó un traductor de lenguaje de señas capaz de reconocer gestos y convertirlos al alfabeto común. La demostración mostró la captura y el procesamiento de gestos con una interfaz básica.\n\nLa profesora Claudia recomendó mejorar la expresión oral y la estructura de la exposición. La profesora Sandra valoró la idea y su escalabilidad, la profesora Danith elogió la inspiración del proyecto, y el profesor Javier recordó que la IA es una herramienta que debe ser dirigida por los desarrolladores.\n\nRedacción UPB Digital",
-    "image": "https://example.com/upb-senas.jpg",
+    "image": "https://i.ibb.co/DDWxTGz3/image.png",
     "date": "2025-10-30"
   },
   {
@@ -260,7 +260,7 @@
     "title": "ElectroMed",
     "summary": "Introducción a Ingeniería de Sistemas e Informática",
     "content": "ElectroMed presentó una aplicación para el monitoreo de electrolitos que permite el registro de datos clínicos y la emisión de alertas ante desequilibrios. La demostración explicó flujos básicos de uso por parte del personal médico.\n\nLa profesora Danith señaló que no se documentaron pruebas de aceptación prometidas y que faltaron referencias en las imágenes. El profesor Lenin apuntó a problemas en la definición del marco conceptual y en la formulación de objetivos; el profesor Francisco preguntó por la posible adopción de patrones de diseño.\n\nRedacción UPB Digital",
-    "image": "https://example.com/electromed.jpg",
+    "image": "https://i.ibb.co/XZ5XSbD9/image.png",
     "date": "2025-10-30"
   },
   {
@@ -268,7 +268,7 @@
     "title": "BlessHealth24/7",
     "summary": "Proyecto Integrador III",
     "content": "BlessHealth24/7 expuso una aplicación móvil multiplataforma para la gestión de citas, medicamentos e historias clínicas con componentes de IA y geolocalización. El equipo presentó casos de uso y flujos de atención.\n\nEl profesor Briceño observó un uso incorrecto del término \"sobreajuste\". El profesor Lenin recordó que ninguna solución está exenta del cumplimiento legal y señaló la falta de referencias en el marco conceptual. La profesora Sandra preguntó por la novedad del proyecto frente a otras propuestas semejantes.\n\nRedacción UPB Digital",
-    "image": "https://example.com/blesshealth247.jpg",
+    "image": "https://i.ibb.co/twT55121/image.png",
     "date": "2025-10-30"
   },
   {
@@ -276,7 +276,7 @@
     "title": "TONGI",
     "summary": "Sistemas Distribuidos",
     "content": "Tongi presentó un traductor con funciones de traducción en tiempo real de voz e imagen, incluyendo opciones offline. La exposición mostró la arquitectura y las limitaciones actuales del módulo de traducción.\n\nEl profesor Ali valoró el proyecto pero indicó que el equipo manejó mal el tiempo de exposición y que debía evitar atributos públicos en diagramas. El profesor Lenin felicitó el avance y el trabajo realizado.\n\nRedacción UPB Digital",
-    "image": "https://example.com/tongi.jpg",
+    "image": "https://i.ibb.co/M5RWs4sn/image.png",
     "date": "2025-10-30"
   },
   {
@@ -284,7 +284,7 @@
     "title": "PicLab",
     "summary": "Sistemas Distribuidos",
     "content": "PicLab presentó una plataforma para procesar y analizar imágenes de manera distribuida y eficiente. La propuesta incluyó mecanismos de balanceo de carga y tolerancia a fallos para reducir tiempos de respuesta.\n\nEl profesor Ali destacó aspectos técnicos de la solución, y el profesor Lenin apuntó la falta de referencias aunque reconoció el buen trabajo.\n\nRedacción UPB Digital",
-    "image": "https://example.com/piclab.jpg",
+    "image": "https://i.ibb.co/HpgWqsCP/image.png",
     "date": "2025-10-30"
   },
   {
@@ -292,7 +292,7 @@
     "title": "MediTranslateAI",
     "summary": "Proyecto Integrador III",
     "content": "MediTranslateAI presentó una aplicación móvil que unifica y traduce datos de historias clínicas para facilitar su comprensión. La exposición describió flujos de traducción y escenarios de uso en salud.\n\nEl profesor Briceño comentó que la presentación careció de ánimo. El profesor Lenin criticó la falta de referencias en el marco teórico y consideró insuficiente la fundamentación. El profesor Ali observó que los estudiantes parecían descubrir el proyecto y las diapositivas durante la exposición.\n\nRedacción UPB Digital",
-    "image": "https://example.com/meditranslateai.jpg",
+    "image": "https://i.ibb.co/wZDRM2Nt/image.png",
     "date": "2025-10-30"
   },
   {
@@ -300,7 +300,7 @@
     "title": "PixPar",
     "summary": "Sistemas Distribuidos",
     "content": "PixPar presentó un sistema de procesamiento de grandes volúmenes de imágenes. La demostración mostró el rendimiento del sistema y su enfoque para balancear cargas entre nodos.\n\nEl profesor Ali señaló que, aunque el producto parecía completo, se pasó muy rápido sobre los resultados de la aplicación. El profesor Lenin hizo observaciones sobre el uso repetido de expresiones vagas y advirtió dependencias en el diagrama de clases. La profesora Claudia felicitó al equipo por su dominio del tema.\n\nRedacción UPB Digital",
-    "image": "https://example.com/pixpar.jpg",
+    "image": "https://i.ibb.co/5dFF6RN/image.png",
     "date": "2025-10-30"
   },
   {
@@ -308,7 +308,7 @@
     "title": "Histofy",
     "summary": "Proyecto Integrador III",
     "content": "Histofy presentó un sistema para la gestión de historias clínicas con funcionalidades de clasificación mediante IA. La presentación describió los alcances y los requisitos de seguridad para el manejo de datos sensibles.\n\nEl profesor Ali señaló aspectos de presentación a corregir en los diagramas y el profesor Lenin indicó que, aunque el sistema funciona, la exposición fue deficiente y faltaron referencias que acreditaran la investigación.\n\nRedacción UPB Digital",
-    "image": "https://example.com/histofy.jpg",
+    "image": "https://i.ibb.co/fVMK8C09/image.png",
     "date": "2025-10-30"
   },
   {
@@ -316,7 +316,7 @@
     "title": "DistriFile",
     "summary": "Sistemas Distribuidos",
     "content": "DistriFile presentó un sistema de almacenamiento distribuido de archivos con redundancia en múltiples nodos coordinados por un servidor de aplicación. La exposición detalló la arquitectura y los mecanismos de replicación.\n\nEl profesor Lenin elogió el trabajo y la exposición. La profesora Claudia felicitó a la estudiante por realizar el trabajo en solitario y el profesor Ali resaltó el esfuerzo individual.\n\nRedacción UPB Digital",
-    "image": "https://example.com/distrifile.jpg",
+    "image": "https://i.ibb.co/NnjB6TYd/image.png",
     "date": "2025-10-30"
   },
   {
@@ -324,7 +324,7 @@
     "title": "Bless Image Plus",
     "summary": "Sistemas Distribuidos",
     "content": "Bless Image Plus presentó una plataforma avanzada para el procesamiento inteligente de imágenes con aprendizaje distribuido. La propuesta incluyó algoritmos para procesar lotes de imagenes y escalado horizontal.\n\nEl profesor Ali dijo que el producto está completo aunque señaló un error en la relación entre una interfaz y una clase en uno de los diagramas. El profesor Lenin recomendó explicar con más detalle el algoritmo como núcleo del negocio.\n\nRedacción UPB Digital",
-    "image": "https://example.com/bless-image-plus.jpg",
+    "image": "https://i.ibb.co/HTdv6r4v/image.png",
     "date": "2025-10-30"
   }
 ]
