@@ -20,5 +20,4 @@ describe('App E2E', () => {
     expect(text).toBeDefined();
   });
 
-  // Puedes agregar más tests E2E aquí según la funcionalidad de tu app
 });

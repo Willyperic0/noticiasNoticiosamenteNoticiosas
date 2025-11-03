@@ -16,7 +16,7 @@ export default class NewsRouter {
   private routes(): void {
     const PER_PAGE = 6;
 
-    // 🔹 HOME - todas las noticias (usa home.ejs)
+    // HOME - todas las noticias (usa home.ejs)
     this.router.get("/", (_req: Request, res: Response): void => {
       const allNews = this.newsModel.getAll(); // todas las noticias
       this.newsView.home(res, allNews, { title: "Inicio - Noticias" });

@@ -1,3 +1,53 @@
+/* ==========================================================================
+   SISTEMA DE DISEÑO - PLATAFORMA DE NOTICIAS ACADÉMICAS
+   ==========================================================================
+
+   PROPÓSITO DEL SISTEMA:
+   - Sistema de diseño escalable para plataforma de noticias académicas
+   - Soporte completo para modo claro/oscuro con transiciones suaves
+   - Arquitectura CSS mantenible y documentada para equipos de desarrollo
+
+   PRINCIPIOS DE DISEÑO:
+   1. Consistencia visual mediante sistema de variables CSS
+   2. Accesibilidad con contraste adecuado en ambos modos
+   3. Performance con transiciones optimizadas
+   4. Mantenibilidad con estructura modular y documentada
+
+   ESTRUCTURA DEL ARCHIVO:
+   1.  Sistema tipográfico
+   2.  Variables de diseño y theming
+   3.  Reset y configuración base
+   4.  Componentes de layout
+   5.  Componentes de interfaz
+   6.  Páginas específicas
+   7.  Utilidades y ajustes responsivos
+   8.  Sistema de animaciones
+   9.  Sobrescrituras para modo oscuro
+   ========================================================================== */
+
+/* ==========================================================================
+   1. SISTEMA TIPOGRÁFICO CORPORATIVO
+   ==========================================================================
+
+   ESTRATEGIA DE FUENTES:
+   - VGA: Texto base para legibilidad óptima en interfaces
+   - Gear6: Elementos de marca para jerarquía visual y identidad
+
+   CONSIDERACIONES TÉCNICAS:
+   - Formatos múltiples para compatibilidad cross-browser
+   - Rutas relativas para portabilidad del proyecto
+   - Pesos y estilos normalizados para consistencia
+   ========================================================================== */
+
+/* =========================================================
+   Tipografía personalizada
+   ---------------------------------------------------------
+   Se definen fuentes locales mediante @font-face. 
+   - "VGA" usada para texto general.
+   - "Gear6" usada para títulos o elementos destacados.
+   Ambas se cargan desde la carpeta ../fonts/.
+   NOTA: No se modifican rutas ni formatos: preservar comportamiento.
+   ========================================================= */
 @font-face {
   font-family: "VGA";
   src: url("../fonts/VGANew.ttf") format("truetype");
@@ -12,39 +62,98 @@
   font-style: normal;
 }
 
-/* ======== Variables de color ======== */
+/* ==========================================================================
+   2. SISTEMA DE VARIABLES Y THEMING
+   ==========================================================================
+
+   ARQUITECTURA DE TOKENS DE DISEÑO:
+   - Variables CSS en :root para herencia global
+   - Paleta semántica (bg, text, accent) no valores hexadecimales crudos
+   - Modo oscuro mediante redefinición de variables
+
+   VENTAJAS DE ESTE ENFOQUE:
+   - Cambios de tema sin duplicación de reglas CSS
+   - Consistencia visual garantizada
+   - Mantenimiento simplificado del sistema de colores
+   ========================================================================== */
+
+/* =========================================================
+   Variables globales de color y layout (modo claro)
+   ---------------------------------------------------------
+   Declaradas en :root para herencia global y cambio dinámico
+   mediante la clase body.dark-mode. Facilitan theming y
+   evitan hard-coding en reglas individuales.
+
+   SEMÁNTICA DE COLORES:
+   - bg: Fondos principales
+   - panel: Superficies elevadas y tarjetas
+   - accent: Acciones primarias y elementos interactivos
+   - text: Contenido textual con máximo contraste
+   - muted: Texto secundario y metadata
+   - hover: Estados interactivos y feedback
+   ========================================================= */
 :root {
   /* Light mode — Gardevoir Essence */
-  --color-bg: #FBFBFC;         /* Lotion - base neutra, luminosa */
-  --color-panel: #F0F5EF;      /* tono inspirado en Chinese White, más limpio */
-  --color-accent: #79AD75;     /* Iguana Green - acento principal */
-  --color-accent-2: #D56671;   /* Fuzzy Wuzzy - acento rosado */
-  --color-hover: #BADBB2;      /* Light Moss Green - hover / resalte */
-  --color-text: #263229;       /* verde grisáceo oscuro - contraste natural */
-  --color-muted: #6E7D73;      /* texto secundario verdoso suave */
+  --color-bg: #FBFBFC;         /* Fondo general (base luminosa) */
+  --color-panel: #F0F5EF;      /* Paneles o bloques internos */
+  --color-accent: #79AD75;     /* Acento principal (verde) */
+  --color-accent-2: #D56671;   /* Acento secundario (rosado) */
+  --color-hover: #BADBB2;      /* Hover / resalte */
+  --color-text: #263229;       /* Texto principal (verde grisáceo oscuro) */
+  --color-muted: #6E7D73;      /* Texto secundario suave */
   --border-color: rgba(0, 0, 0, 0.06);
   --shadow-strong: rgba(0, 0, 0, 0.08);
-  --header-height: 68px;
+  --header-height: 68px;       /* Altura fija de cabecera usada en offsets */
 }
 
-/* ======== Dark Mode (Gardevoir Shiny) ======== */
+/* =========================================================
+   Modo oscuro ("Gardevoir Shiny")
+   ---------------------------------------------------------
+   Reasigna variables para modo oscuro. Mantiene la misma
+   estructura y selectores, permitiendo conmutación por JS.
+
+   ESTRATEGIA DE MODO OSCURO:
+   - No es inversión directa de colores claros
+   - Tonos azulados para reducir fatiga visual nocturna
+   - Mantenimiento de jerarquía visual y contraste accesible
+   ========================================================= */
 body.dark-mode {
-  /* Basado en tonos fríos tipo “shiny” — equilibrio entre azul y menta */
-  --color-bg: #18242B;         /* navy grisáceo oscuro */
-  --color-panel: #22323A;      /* un poco más claro para paneles */
-  --color-accent: #A0F8FF;     /* Skyee Bluee - acento brillante */
-  --color-accent-2: #F48C40;   /* coral suave - contraste */
-  --color-hover: #73C9D0;      /* hover menta */
-  --color-text: #E6F6F8;       /* texto claro */
-  --color-muted: #9FB7BA;      /* texto secundario gris-azulado */
+  /* Basado en tonos fríos tipo "shiny" — equilibrio entre azul y menta */
+  --color-bg: #18242B;
+  --color-panel: #22323A;
+  --color-accent: #A0F8FF;
+  --color-accent-2: #F48C40;
+  --color-hover: #73C9D0;
+  --color-text: #E6F6F8;
+  --color-muted: #9FB7BA;
   --border-color: rgba(255,255,255,0.06);
   --shadow-strong: rgba(0,0,0,0.55);
 }
 
+/* ==========================================================================
+   3. SOBRESCRITURAS ESPECÍFICAS PARA MODO OSCURO
+   ==========================================================================
 
+   PROPÓSITO: 
+   Componentes que requieren ajustes específicos más allá de la 
+   redefinición de variables, generalmente elementos con:
+   - Gradientes complejos
+   - Valores RGBA hardcodeados
+   - Efectos de sombra específicos
 
+   ESTRATEGIA:
+   - Selectores específicos con body.dark-mode como ancestro
+   - Preservación de la intención de diseño original
+   - Mantenimiento de relaciones espaciales y jerarquía
+   ========================================================================== */
 
-/* Dark-mode visual adjustments for elements that used hard-coded rgba values */
+/* =========================================================
+   Ajustes visuales específicos para modo oscuro
+   ---------------------------------------------------------
+   Reglas que corrigen elementos con RGBA o gradientes que
+   no se adaptaban automáticamente solo por variables.
+   Mantienen la legibilidad y coherencia de sombras/borders.
+   ========================================================= */
 body.dark-mode header {
   background: linear-gradient(180deg, rgba(8,14,26,0.92), var(--color-panel));
   box-shadow: 0 6px 24px var(--shadow-strong);
@@ -63,8 +172,30 @@ body.dark-mode .btn-outline-primary { border-color: rgba(96,165,250,0.22); color
 body.dark-mode .btn-outline-primary:hover { background: rgba(96,165,250,0.12); color: #fff; }
 body.dark-mode footer { border-top-color: rgba(255,255,255,0.03); color: var(--color-muted); }
 
-/* ======== Body ======== */
-/* Reset & layout */
+/* ==========================================================================
+   4. RESET Y CONFIGURACIÓN BASE
+   ==========================================================================
+
+   OBJETIVOS:
+   - Establecer base consistente cross-browser
+   - Configurar modelo de caja predecible
+   - Definir tipografía y colores base
+   - Estructura de layout fundamental
+
+   MEJORES PRÁCTICAS IMPLEMENTADAS:
+   - Box-sizing border-box para cálculos consistentes
+   - Height 100% en html/body para layouts flexibles
+   - Sistema de colores mediante variables CSS
+   - Flexbox column para footer sticky
+   ========================================================================== */
+
+/* =========================================================
+   Reset general y estructura base
+   ---------------------------------------------------------
+   - box-sizing: border-box para caja predecible.
+   - html, body height: 100% y margin/padding en 0 para layout.
+   - body usa flex column para permitir footer sticky.
+   ========================================================= */
 * { box-sizing: border-box; }
 html, body { height: 100%; margin: 0; padding: 0; }
 body {
@@ -76,14 +207,55 @@ body {
   flex-direction: column;
 }
 
-/* Improve base typography rhythm */
+/* ==========================================================================
+   5. SISTEMA TIPOGRÁFICO BASE
+   ==========================================================================
+
+   JERARQUÍA TIPOGRÁFICA:
+   - Encabezados: Line-height compacto para títulos
+   - Párrafos: Color del sistema para consistencia
+   - Enlaces: Color de acento con estados hover definidos
+
+   ACCESIBILIDAD:
+   - Line-height adecuado para legibilidad
+   - Contraste de color garantizado por variables
+   - Estados focus visibles para navegación por teclado
+   ========================================================================== */
+
+/* =========================================================
+   Tipografía y enlaces base
+   ---------------------------------------------------------
+   Define ritmo tipográfico y comportamiento de enlaces.
+   ========================================================= */
 h1, h2, h3, h4, h5 { color: var(--color-text); line-height: 1.15; }
 p { color: var(--color-text); }
 a { color: var(--color-accent-2); text-decoration: none; }
 a:hover, a:focus { text-decoration: underline; color: var(--color-accent-2); opacity: 0.92; }
 
-/* ======== Sidebar ======== */
-/* Sidebar (simple, optional) */
+/* ==========================================================================
+   6. COMPONENTES DE LAYOUT PRINCIPAL
+   ==========================================================================
+
+   ARQUITECTURA DE COMPONENTES:
+   - Sidebar: Navegación lateral deslizante
+   - Header: Navegación principal fija
+   - Main-content: Área de contenido con offset para header
+   - Footer: Información institucional sticky
+
+   PATRONES DE DISEÑO:
+   - Position fixed para elementos de navegación
+   - Z-index sistemático para gestión de capas
+   - Transiciones CSS para micro-interacciones
+   - Cálculos CSS para relaciones espaciales dinámicas
+   ========================================================================== */
+
+/* =========================================================
+   Sidebar lateral
+   ---------------------------------------------------------
+   - fixed para mantenerlo visible con scroll.
+   - animación de apertura mediante la clase .show (cambia left).
+   - overflow-y: auto para contenido largo.
+   ========================================================= */
 #sidebarMenu {
   width: 240px; height: 100vh; background: linear-gradient(180deg, var(--color-panel), #f6fbfb);
   color: var(--color-text); position: fixed; left: -240px; top: 0;
@@ -94,7 +266,12 @@ a:hover, a:focus { text-decoration: underline; color: var(--color-accent-2); opa
 #sidebarMenu .nav-link { color: var(--color-text); padding: 0.6rem 1rem; display: block; text-decoration: none; }
 #sidebarMenu .nav-link:hover { background: rgba(44,122,123,0.06); color: var(--color-hover); }
 
-/* Dark-mode toggle button inside sidebar */
+/* =========================================================
+   Botón de cambio de tema (modo oscuro/claro)
+   ---------------------------------------------------------
+   - Usa aria-pressed para indicar estado activo.
+   - Flexbox para distribuir contenido del botón.
+   ========================================================= */
 #btn-dark-mode {
   display: flex; align-items: center; justify-content: space-between;
   background: transparent; border: 1px solid rgba(15,23,36,0.06); color: var(--color-text);
@@ -103,13 +280,21 @@ a:hover, a:focus { text-decoration: underline; color: var(--color-accent-2); opa
 #btn-dark-mode:hover { background: rgba(44,122,123,0.04); }
 #btn-dark-mode[aria-pressed="true"] { background: linear-gradient(90deg, rgba(44,122,123,0.12), rgba(37,99,235,0.06)); border-color: rgba(44,122,123,0.18); }
 
-/* Smooth theme transitions */
+/* =========================================================
+   Transiciones suaves entre temas
+   ---------------------------------------------------------
+   Transición corta para background/color/border-color.
+   Mejora UX al alternar modos.
+   ========================================================= */
 html, body, header, .main-content, footer, .news-card { transition: background-color 200ms ease, color 200ms ease, border-color 200ms ease; }
 
-/* ======== Header ======== */
-/* Header: minimal and stable */
+/* =========================================================
+   Encabezado principal (header)
+   ---------------------------------------------------------
+   - position: fixed para permanecer visible.
+   - Flex para marca y controles; utiliza variable --header-height.
+   ========================================================= */
 header {
-  /* Usar fixed para evitar comportamientos dependientes del contenedor de scroll */
   position: fixed; top: 0; left: 0; width: 100%;
   height: var(--header-height);
   display: flex; align-items: center; justify-content: space-between;
@@ -121,48 +306,133 @@ header .controls { display: flex; align-items: center; gap: 0.5rem; }
 header button { background: transparent; border: none; color: var(--color-text); font-size: 1.2rem; cursor: pointer; padding: 8px; border-radius:6px; }
 header button:focus { outline: 2px solid rgba(37,99,235,0.12); }
 
-/* ======== Main content ======== */
+/* =========================================================
+   Contenedor principal (main)
+   ---------------------------------------------------------
+   - Se aplica padding-top en base a la altura del header para
+     evitar que el contenido quede bajo el mismo.
+   ========================================================= */
 .main-content {
   flex: 1; width: 100%; padding: 1.5rem; transition: all 0.2s;
-  /* espacio superior consistente para no quedar debajo del header */
   padding-top: calc(var(--header-height) + 1rem);
 }
 
 @media (max-width: 768px) { #sidebarMenu { padding-top: calc(var(--header-height)); } }
 
+/* ==========================================================================
+   7. COMPONENTES DE INTERFAZ DE USUARIO
+   ==========================================================================
+
+   PATRONES DE COMPONENTES:
+   - Formularios: Estilos consistentes para inputs y botones
+   - Tarjetas: Contenedores de contenido con efectos hover
+   - Botones: Variantes primarias y outline
+   - Navegación: Paginación y elementos interactivos
+
+   PRINCIPIOS DE INTERACCIÓN:
+   - Feedback visual en todos los estados interactivos
+   - Transiciones suaves para cambios de estado
+   - Jerarquía visual clara para acciones
+   ========================================================================== */
+
+/* =========================================================
+   Ajuste de salto de línea en contenidos específicos
+   ---------------------------------------------------------
+   - white-space: pre-line mantiene saltos de línea del contenido
+     sin romper el flujo del layout.
+   ========================================================= */
 .news-card .card-body p,
 .blog-article .lead,
 .blog-article .article-body p {
   white-space: pre-line;
 }
 
-
-/* ======== Search bar ======== */
-/* Simple form/search styles */
+/* =========================================================
+   Barra de búsqueda
+   ---------------------------------------------------------
+   - Estilos sencillos para consistencia con el tema.
+   - El input .form-control utiliza un fondo sutil.
+   ========================================================= */
 #searchForm { margin-bottom: 1.25rem; }
 #searchForm .form-control { background: rgba(15,23,36,0.02); border: 1px solid rgba(15,23,36,0.06); }
 #searchForm .btn-primary { background: var(--color-accent-2); border: none; }
 #searchForm .btn-primary:hover { background: #1f4ed8; }
 
-/* ======== News cards ======== */
-.news-card { background: linear-gradient(180deg, var(--color-panel), #fbfdfd); color: var(--color-text); min-height: 320px; border-radius: 10px; overflow: hidden; box-shadow: 0 8px 30px rgba(2,6,23,0.04); display:flex; flex-direction:column; border: 1px solid rgba(15,23,36,0.04); }
-.news-card img { height: 180px; object-fit: cover; }
+/* =========================================================
+   Tarjetas de noticias (News Cards)
+   ---------------------------------------------------------
+   - Estructura flexible (flex column) para que el footer
+     o CTAs puedan posicionarse al final de la tarjeta.
+   - Transiciones para hover, y transform para elevar la tarjeta.
+   - object-fit en imagen para recorte consistente.
+   ========================================================= */
+.news-card { 
+  background: linear-gradient(180deg, var(--color-panel), #fbfdfd); 
+  color: var(--color-text); 
+  min-height: 320px; 
+  border-radius: 10px; 
+  overflow: hidden; 
+  box-shadow: 0 8px 30px rgba(2,6,23,0.04); 
+  display:flex; 
+  flex-direction:column; 
+  border: 1px solid rgba(15,23,36,0.04);
+  transition: all 0.3s ease;
+  position: relative;
+  z-index: 1;
+}
+
+.news-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 16px 40px rgba(2,6,23,0.12);
+  z-index: 2;
+}
+
+.news-card img { height: 180px; object-fit: cover; transition: transform 0.3s ease; }
+.news-card:hover img { transform: scale(1.05); }
 .news-card .card-body { padding: 1rem; display:flex; flex-direction:column; gap:0.5rem; }
 .news-card .card-title { color: var(--color-text); font-weight:700; }
 .btn-outline-primary { border-color: var(--color-accent-2); color: var(--color-accent-2); }
 .btn-outline-primary:hover { background: var(--color-accent-2); color: #fff; }
 
-/* ======== Footer ======== */
+/* =========================================================
+   Pie de página
+   ---------------------------------------------------------
+   - Simple y pegado al final gracias a layout flex-column.
+   ========================================================= */
 footer { margin-top: auto; text-align:center; padding: 1rem; color: var(--color-muted); font-size: 0.9rem; background: transparent; border-top: 1px solid rgba(31,41,51,0.04); }
 
-/* ======== Utilidades ======== */
+/* ==========================================================================
+   8. UTILIDADES Y CLASES DE APOYO
+   ==========================================================================
+
+   PROPÓSITO:
+   - Clases utilitarias para casos de uso específicos
+   - Compatibilidad con diferentes estructuras de template
+   - Mantenimiento de consistencia visual en edge cases
+
+   ESTRATEGIA:
+   - Nomenclatura semántica y descriptiva
+   - Uso de variables del sistema para coherencia
+   - Documentación clara de casos de uso
+   ========================================================================== */
+
+/* =========================================================
+   Utilidades tipográficas y de layout
+   ---------------------------------------------------------
+   - .Titulo: variante tipográfica para encabezados internos.
+   ========================================================= */
 .Titulo {
   font-family: "Gear6", sans-serif;
   color: var(--color-accent-2);
   font-size: 1.15rem;
 }
 
-/* Compatibilidad para plantillas que no usan .main-content */
+/* =========================================================
+   Compatibilidad con estructuras sin .main-content
+   ---------------------------------------------------------
+   - Asegura que templates diferentes compartan el mismo offset
+     respecto al header y un ancho máximo cómodo de lectura.
+   ========================================================= */
 body > main,
 article,
 .form-container {
@@ -174,34 +444,172 @@ article,
   padding-right: 1rem;
 }
 
-/* Estilos para artículo tipo blog (news detail) */
+/* ==========================================================================
+   9. PÁGINAS ESPECÍFICAS Y PLANTILLAS
+   ==========================================================================
+
+   DISEÑO ORIENTADO A CONTENIDO:
+   - Optimización para lectura prolongada
+   - Jerarquía tipográfica clara
+   - Espaciado consistente y respirable
+   - Imágenes con proporciones controladas
+
+   CONSIDERACIONES DE UX:
+   - Animaciones de entrada suaves
+   - Layouts responsivos adaptativos
+   - Navegación contextual clara
+   ========================================================================== */
+
+/* =========================================================
+   Artículo tipo blog (detalle de noticia)
+   ---------------------------------------------------------
+   - Diseño pensado para lectura: line-height amplio y lead.
+   - Animación fadeIn para entrada suave.
+   ========================================================= */
 .blog-article {
-  max-width: 900px;
-  margin: 0 auto 2rem;
-  background: var(--color-panel);
+  max-width: 100%;
+  margin: 0;
+  padding: 2rem 0;
+  background: transparent;
   color: var(--color-text);
-  padding: 2rem;
-  border-radius: 10px;
-  box-shadow: 0 8px 30px rgba(2,6,23,0.06);
+  border-radius: 0;
+  box-shadow: none;
   line-height: 1.75;
+  animation: fadeIn 0.5s ease-in;
 }
-.blog-article h2 { font-size: 2rem; margin: 0 0 0.5rem; letter-spacing: -0.4px; }
-.blog-article .article-date { font-size: 0.95rem; color: var(--color-muted); margin-bottom: 1rem; }
-.blog-article img { width: 100%; max-height: 420px; object-fit: cover; border-radius: 8px; margin: 1rem 0; }
-.blog-article .lead { font-size: 1.05rem; color: var(--color-muted); margin-bottom: 1rem; font-style: italic; }
-.blog-article .article-body p { margin-bottom: 1rem; }
+
+.blog-article h2 {
+  font-size: 2.2rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  line-height: 1.3;
+  color: var(--color-text);
+  letter-spacing: -0.4px;
+}
+
+.blog-article .article-date {
+  font-size: 0.9rem;
+  margin-bottom: 1.5rem;
+  color: var(--color-muted);
+}
+
+.blog-article img {
+  width: 100%;
+  max-height: 500px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin: 1.5rem 0;
+}
+
+.blog-article .lead {
+  font-size: 1.3rem;
+  font-weight: 400;
+  line-height: 1.6;
+  margin: 1.5rem 0;
+  color: var(--color-muted);
+  padding: 0;
+  background: transparent;
+  border-left: none;
+}
+
+.blog-article .article-body {
+  line-height: 1.7;
+  font-size: 1.1rem;
+  margin-top: 2rem;
+  color: var(--color-text);
+}
+
+.blog-article .article-body p {
+  margin-bottom: 1.5rem;
+}
+
+/* ==========================================================================
+   10. SISTEMA DE ANIMACIONES Y TRANSICIONES
+   ==========================================================================
+
+   ESTRATEGIA DE ANIMACIÓN:
+   - Transiciones cortas (200-300ms) para feedback inmediato
+   - Timing functions apropiadas para cada tipo de interacción
+   - Transform y opacity para performance
+   - Keyframes simples para entradas de contenido
+
+   BENEFICIOS:
+   - Mejor percepción de performance
+   - Guiado visual del usuario
+   - Experiencia pulida y profesional
+   ========================================================================== */
+
+/* Keyframes de entrada */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* ==========================================================================
+   11. DISEÑO RESPONSIVE Y ADAPTACIONES
+   ==========================================================================
+
+   ENFOQUE RESPONSIVE:
+   - Mobile-first con mejoras progresivas
+   - Breakpoints basados en contenido
+   - Reflow controlado de componentes
+   - Optimización de espacios en móviles
+
+   BREAKPOINTS ESTRATÉGICOS:
+   - 768px: Tablets y móviles en landscape
+   - 1200px: Pantallas grandes y escritorio
+   ========================================================================== */
+
+/* =========================================================
+   Ajustes responsivos para blog y tarjetas
+   ---------------------------------------------------------
+   - Mejora legibilidad y adapta imágenes en pantallas pequeñas.
+   ========================================================= */
+@media (min-width: 1200px) {
+  .blog-article {
+    padding: 2rem 3rem;
+  }
+}
 
 @media (max-width: 768px) {
-  .blog-article { padding: 1rem; margin-top: calc(var(--header-height) + 0.5rem); }
+  .blog-article { 
+    padding: 1rem 0; 
+    margin-top: calc(var(--header-height) + 0.5rem); 
+  }
+  .blog-article h2 {
+    font-size: 1.8rem;
+  }
   .news-card img { height: 160px; }
 }
 
+/* ==========================================================================
+   12. OPTIMIZACIONES DE COMPONENTES ESPECÍFICOS
+   ==========================================================================
+
+   OPTIMIZACIONES IMPLEMENTADAS:
+   - Alturas uniformes en grids de tarjetas
+   - Truncado elegante de texto largo
+   - Efectos hover performance con transform
+   - Gestión de capas con z-index sistemático
+
+   BENEFICIOS:
+   - Interfaces más estables y predecibles
+   - Mejor experiencia visual en contenido dinámico
+   - Comportamiento consistente cross-browser
+   ========================================================================== */
+
+/* =========================================================
+   Ajustes visuales para tarjetas uniformes
+   ---------------------------------------------------------
+   - min-height / max-height para coherencia en rejillas/carruseles.
+   - -webkit-line-clamp para truncado visual de resúmenes.
+   ========================================================= */
 .flex-grow-1 {
   width: 100%;
   transition: all 0.3s;
 }
 
-/* === Ajuste de altura visual uniforme en tarjetas === */
+/* Mantener coherencia de altura en news-card (reespecificado) */
 .news-card {
   display: flex;
   flex-direction: column;
@@ -225,7 +633,28 @@ article,
   -webkit-box-orient: vertical;
 }
 
-/* ======== Carrusel ======== */
+/* ==========================================================================
+   13. COMPONENTES ESPECIALIZADOS Y CARRUSELES
+   ==========================================================================
+
+   COMPONENTES COMPLEJOS:
+   - Carruseles con navegación personalizada
+   - Tarjetas hero para contenido destacado
+   - Secciones especializadas con comportamiento único
+
+   TÉCNICAS AVANZADAS:
+   - Position absolute para controles de carrusel
+   - Gradientes CSS para efectos visuales
+   - Transiciones compuestas para interacciones
+   ========================================================================== */
+
+/* =========================================================
+   Carrusel de noticias
+   ---------------------------------------------------------
+   - Ajuste de tamaño de controles y ocultado de indicadores
+     para una apariencia más limpia.
+   - Iconos de control personalizados con fondo circular y drop-shadow.
+   ========================================================= */
 .carousel-control-prev,
 .carousel-control-next {
   width: 5%;
@@ -239,12 +668,12 @@ article,
   right: -3%;
 }
 
-/* Ocultar indicadores */
+/* Ocultar indicadores para UX más limpia */
 .carousel-indicators {
   display: none !important;
 }
 
-/* Flechas — color según modo */
+/* Flechas — color según modo (se sobre-escribe en dark-mode) */
 .carousel-control-prev-icon,
 .carousel-control-next-icon {
   background-color: #D56671; /* rojo del modo claro */
@@ -257,7 +686,12 @@ body.dark-mode .carousel-control-next-icon {
   background-color: #F48C40; /* naranja del modo oscuro */
 }
 
-/* ======== Integración visual para noticia destacada y carruseles ======== */
+/* =========================================================
+   Integración visual para noticia destacada (hero) y carruseles
+   ---------------------------------------------------------
+   - Unifica tratamiento visual (bordes, sombras, transiciones).
+   - Hover sutil para interacción.
+   ========================================================= */
 
 /* === Noticia destacada (hero) === */
 .hero .card {
@@ -312,7 +746,7 @@ body.dark-mode .carousel-inner .card {
   background: linear-gradient(180deg, rgba(14,20,30,0.9), var(--color-panel));
 }
 
-/* === Flechas laterales === */
+/* === Flechas laterales (redifinidas para consistencia) === */
 .carousel-control-prev,
 .carousel-control-next {
   width: 5%;
@@ -326,12 +760,12 @@ body.dark-mode .carousel-inner .card {
   right: -3%;
 }
 
-/* Ocultar indicadores */
+/* Ocultar indicadores (repetición intencional para especificidad) */
 .carousel-indicators {
   display: none !important;
 }
 
-/* Flechas personalizadas */
+/* Flechas personalizadas (tamaño y comportamiento) */
 .carousel-control-prev-icon,
 .carousel-control-next-icon {
   background-color: var(--color-accent-2); /* rojo en modo claro */
@@ -355,7 +789,11 @@ body.dark-mode .carousel-control-next-icon {
   filter: drop-shadow(0 0 4px rgba(255, 140, 64, 0.4));
 }
 
-/* === Textos internos === */
+/* =========================================================
+   Textos internos y utilidades en secciones (jornada, cards)
+   ---------------------------------------------------------
+   Asegura contraste y herencia de color desde variables.
+   ========================================================= */
 .jornada-section h3 {
   color: var(--color-text);
   font-weight: 600;
@@ -366,3 +804,96 @@ body.dark-mode .carousel-control-next-icon {
 .text-secondary {
   color: var(--color-text);
 }
+
+/* ==========================================================================
+   14. CORRECCIONES Y AJUSTES ESPECÍFICOS
+   ==========================================================================
+
+   CASOS ESPECIALES MANEJADOS:
+   - Utilidades de frameworks externos (Bootstrap)
+   - Especificidad CSS en componentes de terceros
+   - Estados de contraste en modo oscuro
+   - Compatibilidad cross-browser
+
+   ESTRATEGIA DE CORRECCIÓN:
+   - Selectores específicos con body.dark-mode
+   - Uso de !important solo donde es estrictamente necesario
+   - Preservación de comportamientos existentes
+   ========================================================================== */
+
+/* =========================================================
+   Correcciones específicas para modo oscuro
+   ---------------------------------------------------------
+   - Uso de !important donde es necesario para sobrescribir
+     utilidades o librerías externas que definan .text-muted.
+   - Asegura legibilidad y consistencia de paginación y formularios.
+   ========================================================= */
+
+/* Corrección para textos grises en modo oscuro */
+body.dark-mode .text-muted,
+body.dark-mode .text-secondary,
+body.dark-mode .article-date,
+body.dark-mode .lead {
+  color: var(--color-muted) !important;
+}
+
+/* Corrección para la paginación en modo oscuro */
+body.dark-mode .pagination .page-link {
+  background-color: var(--color-panel);
+  border-color: var(--border-color);
+  color: var(--color-text);
+}
+
+body.dark-mode .pagination .page-item.active .page-link {
+  background-color: var(--color-accent-2);
+  border-color: var(--color-accent-2);
+  color: #fff;
+}
+
+body.dark-mode .pagination .page-link:hover {
+  background-color: var(--color-hover);
+  border-color: var(--color-hover);
+  color: var(--color-text);
+}
+
+body.dark-mode .pagination .page-item.disabled .page-link {
+  background-color: var(--color-bg);
+  border-color: var(--border-color);
+  color: var(--color-muted);
+}
+
+/* Corrección para el buscador en modo oscuro */
+body.dark-mode #searchForm .form-control {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid var(--border-color);
+  color: var(--color-text);
+}
+
+body.dark-mode #searchForm .form-control::placeholder {
+  color: var(--color-muted);
+}
+
+/* Corrección para el mensaje de "No hay noticias disponibles" */
+body.dark-mode .text-muted {
+  color: var(--color-muted) !important;
+}
+
+/* Asegurar que todos los textos usen las variables correctas */
+body.dark-mode .card-text,
+body.dark-mode .card-title,
+body.dark-mode .small {
+  color: var(--color-text);
+}
+
+/* ==========================================================================
+   FIN DEL SISTEMA DE DISEÑO
+   ==========================================================================
+
+   MANTENIMIENTO Y EVOLUCIÓN:
+   - Preservar estructura de comentarios para futuras actualizaciones
+   - Mantener coherencia con principios de diseño establecidos
+   - Documentar cambios significativos en esta sección
+
+   ÚLTIMA ACTUALIZACIÓN: [Fecha]
+   VERSIÓN: 1.0
+   ========================================================================== */

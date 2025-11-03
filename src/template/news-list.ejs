@@ -11,35 +11,69 @@
 
 <body>
 
+  <!-- ============================================
+       Sidebar (componente parcial)
+       - Contiene el menú de navegación lateral
+       ============================================ -->
   <%- include('partials/sidebar') %>
 
-  <!-- Header fijo (partial) -->
+  <!-- ============================================
+       Header fijo (componente parcial)
+       - Muestra el título de la sección principal
+       ============================================ -->
   <%- include('partials/header', { headerTitle: 'Noticias noticiosamente noticiosas' }) %>
 
-  <!-- Contenido principal -->
+  <!-- ============================================
+       Contenedor principal del contenido dinámico
+       ============================================ -->
   <div class="main-content">
 
-    <!-- Buscador -->
+    <!-- ======================================================
+         BLOQUE: Buscador de noticias
+         - Permite filtrar resultados por título
+         - Envia los parámetros al endpoint "/search" (GET)
+         ====================================================== -->
     <form id="searchForm" action="/search" method="get" class="mb-4">
       <div class="input-group">
-        <input type="text" name="term" class="form-control" placeholder="Buscar por título..." value="<%= search || '' %>">
+        <input 
+          type="text" 
+          name="term" 
+          class="form-control" 
+          placeholder="Buscar por título..." 
+          value="<%= search || '' %>">
         <button class="btn btn-primary" type="submit">Buscar</button>
       </div>
     </form>
 
-    <!-- Noticias -->
+    <!-- ======================================================
+         BLOQUE: Listado de noticias
+         - Recorre el array "news" e imprime cada noticia
+         - Si no hay noticias, muestra un mensaje informativo
+         ====================================================== -->
     <div class="row g-4">
       <% if (news.length === 0) { %>
+        <!-- Caso: no hay noticias -->
         <p class="text-center text-muted">No hay noticias disponibles.</p>
+
       <% } else { %>
+        <!-- Caso: existen noticias -->
         <% news.forEach(n => { %>
           <div class="col-md-4">
             <div class="card news-card shadow-sm">
+              <!-- Imagen principal de la noticia -->
               <img src="<%= n.image %>" alt="<%= n.title %>">
+
               <div class="card-body">
+                <!-- Título de la noticia -->
                 <h5 class="card-title"><%= n.title %></h5>
+
+                <!-- Resumen breve -->
                 <p class="card-text"><%= n.summary %></p>
+
+                <!-- Fecha de publicación -->
                 <p class="text-secondary small mt-auto"><%= n.date %></p>
+
+                <!-- Enlace al detalle de la noticia -->
                 <a href="/news/<%= n.id %>" class="btn btn-outline-primary btn-sm mt-2">Leer más</a>
               </div>
             </div>
@@ -48,33 +82,46 @@
       <% } %>
     </div>
 
-  <!-- Paginación -->
-  <% if (totalPages > 1) { %>
-    <nav aria-label="Paginación" class="mt-5">
-      <ul class="pagination justify-content-center">
-        <li class="page-item <%= page <= 1 ? 'disabled' : '' %>">
-          <a class="page-link"
-            href="?term=<%= search || '' %>&page=<%= page - 1 %>">Anterior</a>
-        </li>
+    <!-- ======================================================
+         BLOQUE: Paginación
+         - Se muestra solo si hay más de una página de resultados
+         - Usa parámetros "term" y "page" para conservar filtros
+         ====================================================== -->
+    <% if (totalPages > 1) { %>
+      <nav aria-label="Paginación" class="mt-5">
+        <ul class="pagination justify-content-center">
 
-        <% for (let i = 1; i <= totalPages; i++) { %>
-          <li class="page-item <%= page === i ? 'active' : '' %>">
+          <!-- Botón: página anterior -->
+          <li class="page-item <%= page <= 1 ? 'disabled' : '' %>">
             <a class="page-link"
-              href="?term=<%= search || '' %>&page=<%= i %>"><%= i %></a>
+              href="?term=<%= search || '' %>&page=<%= page - 1 %>">Anterior</a>
           </li>
-        <% } %>
 
-        <li class="page-item <%= page >= totalPages ? 'disabled' : '' %>">
-          <a class="page-link"
-            href="?term=<%= search || '' %>&page=<%= page + 1 %>">Siguiente</a>
-        </li>
-      </ul>
-    </nav>
-  <% } %>
+          <!-- Botones numéricos -->
+          <% for (let i = 1; i <= totalPages; i++) { %>
+            <li class="page-item <%= page === i ? 'active' : '' %>">
+              <a class="page-link"
+                href="?term=<%= search || '' %>&page=<%= i %>"><%= i %></a>
+            </li>
+          <% } %>
 
+          <!-- Botón: página siguiente -->
+          <li class="page-item <%= page >= totalPages ? 'disabled' : '' %>">
+            <a class="page-link"
+              href="?term=<%= search || '' %>&page=<%= page + 1 %>">Siguiente</a>
+          </li>
+
+        </ul>
+      </nav>
+    <% } %>
 
   </div>
 
+  <!-- ============================================
+       Footer (componente parcial)
+       - Incluye pie de página general del sitio
+       ============================================ -->
   <%- include('partials/footer') %>
+
 </body>
 </html>
