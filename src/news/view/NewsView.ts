@@ -62,4 +62,14 @@ export default class NewsView {
   form(res: Response): void {
     res.render("news-form", { title: "Nueva noticia" });
   }
+
+    // NewsView.ts
+  home(res: Response, news: News[], options?: { title?: string; search?: string }): void {
+    res.render("home", {
+      title: options?.title ?? "Inicio - Noticias",
+      news,
+      search: options?.search ?? ""
+    });
+  }
+
 }

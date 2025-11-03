@@ -2,25 +2,6 @@ import { Router, Request, Response } from "express";
 import NewsModel from "../model/NewsModel";
 import NewsView from "../view/NewsView";
 
-/*
-  NewsRouter
-  ----------
-  Encapsula todas las rutas relacionadas con el recurso "news".
-
-  Rutas expuestas:
-  - GET /news             => lista paginada de noticias
-  - GET /news/new         => formulario para crear una noticia
-  - POST /news/new        => persiste la nueva noticia y redirige
-  - GET /news/jornada/:num => listado filtrado por una "jornada" (fecha)
-  - GET /news/:id         => detalle de una noticia
-
-  Notas de diseño:
-  - El router delega en `NewsModel` para acceder a los datos y en `NewsView`
-    para renderizar las plantillas. Esto mantiene separación de responsabilidades.
-  - La paginación se realiza en memoria sobre el array devuelto por el modelo.
-    En aplicaciones reales con DB, la paginación debería realizarse mediante
-    consultas limit/offset.
-*/
 export default class NewsRouter {
   public readonly router: Router;
 
@@ -33,34 +14,23 @@ export default class NewsRouter {
   }
 
   private routes(): void {
-    const PER_PAGE = 6; // Items por página para la paginación simple
+    const PER_PAGE = 6;
 
-    // Lista completa de noticias con paginación.
-    this.router.get("/", (req: Request, res: Response): void => {
-      const page = parseInt((req.query['page'] as string) ?? "1", 10);
-      const allNews = this.newsModel.getAll();
-
-      const totalPages = Math.ceil(allNews.length / PER_PAGE);
-      const startIndex = (page - 1) * PER_PAGE;
-      const paginatedNews = allNews.slice(startIndex, startIndex + PER_PAGE);
-
-      this.newsView.list(res, paginatedNews, {
-        title: "Todas las Noticias",
-        page,
-        totalPages
-      });
+    // 🔹 HOME - todas las noticias (usa home.ejs)
+    this.router.get("/", (_req: Request, res: Response): void => {
+      const allNews = this.newsModel.getAll(); // todas las noticias
+      this.newsView.home(res, allNews, { title: "Inicio - Noticias" });
     });
 
-    // Formulario para crear nueva noticia (GET /news/new)
+    // Formulario para crear nueva noticia
     this.router.get("/new", (_req: Request, res: Response): void => {
       this.newsView.form(res);
     });
 
-    // Guardar nueva noticia (POST /news/new)
+    // Guardar nueva noticia
     this.router.post("/new", (req: Request, res: Response): void => {
       const { title, summary, content, image, date } = req.body;
 
-      // Si el cliente no envía fecha, asignamos la fecha actual formateada
       const finalDate =
         date && date.trim() !== "" ? date : new Date().toLocaleDateString("es-ES");
 
@@ -72,13 +42,10 @@ export default class NewsRouter {
         date: finalDate,
       });
 
-      // Redirigir a la lista principal después de crear
       res.redirect("/news");
     });
 
-    // Noticias por jornada con paginación
-    // Nota: las fechas y jornadas están codificadas; en una app real deberían
-    // venir de una fuente dinámica o de la base de datos.
+    // Noticias por jornada
     this.router.get("/jornada/:num", (req: Request, res: Response): void => {
       const numStr = req.params['num'] ?? "0";
       const num = parseInt(numStr, 10);
